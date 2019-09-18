@@ -1,42 +1,18 @@
-# FOSBE2019
+# CellNOpt (matlab)
 
-Application of Dynamic-Feeder pipeline on the HPN-DREAM dataset ([Hill et.al.]((https://www.nature.com/articles/nmeth.3773))).
+CellNetOptimizer (CellNOpt, also known as CNO) was originaly a matlab toolbox for creating logic-based models of signal transduction networks, and training them against high-throughput biochemical data using various logic formalisms. The development of CellNOpt is now mostly around R verssion (see [www.cellnopt.org](www.cellnopt.org)), but you can download the MATLAB version in this repository.
 
-## Organisation of the repository
+## Q2LM: Quering Quantitative Logic Models
+Q1LM is a MATLAB library that uses constrained fuzzy logic models based on prior knowledge networks to address two questions about a biological system: (i) What perturbation results in a specified downstream effect?; (ii) In waht environments do thos perturbations produce that effect?.
 
-+ [Data](https://github.com/saezlab/FOSBE2019/tree/master/Data): Here we provide the main inputs of our pipeline - a Prior Knowledge Network (PKN), a CNOlist and an Interaction Database object.
-+ [Public](https://github.com/saezlab/FOSBE2019/tree/master/Public): Here we provide the main functions of the Dynamic-Feeder pipeline.
-+ [Initial-Analysis](https://github.com/saezlab/FOSBE2019/tree/master/Initial-Analysis): Here we provide the script used for the training of the initial PKN to the data.
-+ [Feeder-Analysis](https://github.com/saezlab/FOSBE2019/tree/master/Feeder-Analysis): Here we provide with the scripts used for the training of the integrated models and a script used for identifying the best model based on Akaike Information Criterion (AIC) score. By integrated model we are referring to the neworks which have new links identified from the Dynamic-Feeder pipeline and which are integrated to the initial PKN.
-+ [Results](https://github.com/saezlab/FOSBE2019/tree/master/Results): Here we provide the object results together with the plots of the models we trained and the fits we obtained.
+Q2LM is a tool developed by Melody Morris and Doug Lauffenburger. © Copyright 2011,2012 Massachusetts Institute of Technology.
 
-+ [ToyExample](https://github.com/saezlab/FOSBE2019/tree/master/ToyExample): This is a seperate case study, where the Dynamic-Feeder pipeline has been applied on a simple toy example. This example is to show how to run Dynamic-Feeder in a single execution script.
+## References
+- For the CellNOpt MATLAB toolbox:
+M. K. Morris, I. Melas, J. Saez-Rodriguez. Construction of cell type-specific logic models of signaling networks using CellNetOptimizer. to appear in Methods in Molecular Biology:Computational Toxicology, Ed. B. Reisfeld and A. Mayeno, Humana Press. Preprint
 
-## Requirements
+- For the Q2LM toolbox:
+M. K. Morris, Z. Shriver, R. Sasisekharan, D. A. Lauffenburger. 2012. **Querying quantitative logic models (Q2LM) to study intracellular signaling networks and cell-cytokine interactions.** Biotech. J. 7.
 
-All network modelling steps were performed in [R](https://www.r-project.org/) v3.5.1 and visualised using [Cytoscape v3.4.](http://chianti.ucsd.edu/cytoscape-3.4.0/)
 
-Other prerequisites include downloading and installing the following `R` package dependencies:
-
-### Bioconductor
-
-+ [CellNOptR](https://bioconductor.org/packages/release/bioc/html/CellNOptR.html)
-+ [MEIGOR](https://www.bioconductor.org/packages/release/bioc/html/MEIGOR.html)
-+ [CNORode](https://github.com/saezlab/CNORode)
-
-### CRAN
-+ [doParallel](https://cran.r-project.org/web/packages/doParallel/index.html)
-+ [readr](https://cran.r-project.org/web/packages/readr/index.html)
-+ [infotheo](https://cran.r-project.org/web/packages/infotheo/index.html)
-+ [igraph](https://cran.r-project.org/web/packages/igraph/index.html)
-
-## How to run the pipeline
-
-Here we refer to the HPN-DREAM case study. For better understanding we have compartmentalized the execution of the of the Dynamic-Feeder pipeline into two parts:
-
-+ The initial training of the original PKN. We can train the original model simply by running `initialAnalysis.R` script [here](https://github.com/saezlab/FOSBE2019/blob/master/Initial-Analysis/initialAnalysis.R). Through this script we can identify the optimal set of parameters representing dynamic features of the elements in the PKN and we will generate the simulated behaviour of our system for these specific set of parameters. The latter will be used as an input for the Dynamic-Feeder pipeline.
-+ We can then integrate new links to the original PKN and then do the training by running the `HPN_Feeder.R` script found [here](https://github.com/saezlab/FOSBE2019/blob/master/Feeder-Analysis/HPN_Feeder.R). This scrip will then identify the new set of optimal parameters for the integrated network.
-
-## License
-
-Distributed under the [GNU GPLv3 License](http://www.gnu.org/licenses/gpl-3.0.html).
+CellNOpt and Q2LM are free software: you can redistribute them and/or modify it under the terms of the GNU General Public License version 2 as published by the Free Software Foundation. Q2LM is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License at http://www.gnu.org/licenses/old-licenses/gpl-2.0.html for more details
