@@ -1,6 +1,6 @@
 # CellNOpt (matlab)
 
-CellNetOptimizer (CellNOpt, also known as CNO) was originaly a matlab toolbox for creating logic-based models of signal transduction networks, and training them against high-throughput biochemical data using various logic formalisms. The development of CellNOpt is now mostly around R verssion (see [www.cellnopt.org](www.cellnopt.org)), but you can download the MATLAB version in this repository.
+CellNetOptimizer (CellNOpt, also known as CNO) was originaly a matlab toolbox for creating logic-based models of signal transduction networks, and training them against high-throughput biochemical data using various logic formalisms. The development of CellNOpt is now mostly around R verssion (see [www.cellnopt.org](https://saezlab.github.io/CellNOptR/)), but you can download the MATLAB version in this repository.
 
 ## Q2LM: Quering Quantitative Logic Models
 Q1LM is a MATLAB library that uses constrained fuzzy logic models based on prior knowledge networks to address two questions about a biological system: (i) What perturbation results in a specified downstream effect?; (ii) In waht environments do thos perturbations produce that effect?.
